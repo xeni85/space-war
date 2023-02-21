@@ -26,6 +26,94 @@ main {
   width: 20vw;
 }
 
+@keyframes spaceShip {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(30vw);
+	}
+  100% {
+		transform: translateX(0vw);
+	}
+}
+
+.player-inGame {
+  animation: spaceShip 2s ease-in-out 0s 1 normal forwards;
+}
+
+.alien-laser, .player-laser {
+  display: none;
+}
+
+
+.player-laser-hit {
+  /* display: none; */
+  z-index: 5;
+  position: absolute;
+  left: 16vw;
+  bottom: 30vh;
+  display: block;
+  animation: spaceShip 2s ease-in-out 0s 1 normal forwards;
+}
+
+.alien-laser-hit {
+  z-index: 7;
+  position: absolute;
+  right: 16vw;
+  top: 33.65vh;
+  display: block;
+  animation: alienShip 2s ease-in-out 0s 1 normal forwards;
+}
+
+.player-laser-miss {
+  /* display: none; */
+  z-index: 5;
+  position: absolute;
+  left: 16vw;
+  bottom: 30vh;
+  display: block!important;
+  animation: spaceShip 2s ease-in-out 0s 1 normal forwards;
+}
+@keyframes alienShip-miss {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(-30vw);
+	}
+  100% {
+		transform: translateX(0);
+	}
+}
+.alien-laser-miss {
+  z-index: 7;
+  position: absolute;
+  right: 16vw;
+  top: 33.65vh;
+  display: block;
+  animation: alienShip 2s ease-in-out 0s 1 normal forwards;
+
+}
+
+@keyframes alienShip {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(-30vw);
+	}
+  100% {
+		transform: translateX(0);
+	}
+}
+.alien-inGame {
+  animation: alienShip 2s ease-in-out 0s 1 normal forwards;
+}
+
 .aliens {
   display: flex;
   flex-direction: column;
@@ -53,6 +141,7 @@ footer {
 }
 .alien-container {
     width: 33vw;
+    color: rgb(152, 4, 4)
 }
 .player-attack {
   display: flex;
@@ -62,6 +151,7 @@ footer {
 }
 .player-container {
     width: 33vw;
+    color:aqua;
 }
 /*added through JS*/
 .player-attack-inGame {
@@ -72,13 +162,10 @@ footer {
     width: 33vw;
     height: 100%;
     align-items: center;
-    -webkit-box-shadow: 10px 0px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 0px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+    
 
-    -webkit-box-shadow: -10px 0px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: -10px 0px 5px 0px rgba(0,0,0,0.75);
-box-shadow: -10px 0px 5px 0px rgba(0,0,0,0.75);
+
 }
 #player-attack-btn {
   padding: 0.5vh 1vw;
